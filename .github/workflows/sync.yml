@@ -23,5 +23,5 @@ jobs:
       # 3. 조직 레포로 push
       - name: Push to org repo
         run: |
-          git remote add org https://x-access-token:${{ secrets.YOUR_PAT }}@github.com/sessac-codingstudy/${{ secrets.YOUR_REPO }}.git
+          git remote add org https://x-access-token:${{ secrets.YOUR_PAT }}@github.com/sessac-codingstudy/hansun-cote.git
           git push org main --force
