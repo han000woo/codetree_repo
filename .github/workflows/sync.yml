@@ -1,9 +1,9 @@
 name: Push to Organization Repo
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '50 14 * * *'
+  workflow_dispatch: # 수동 실행도 가능
 
 jobs:
   push_to_org:
