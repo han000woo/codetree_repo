@@ -11,7 +11,8 @@ def is_prime(n) :
 # Please write your code here.
 count = 0
 num = start 
-for i in range(int(math.sqrt(start)), int(math.sqrt(end))) :
-    if(is_prime(i)) :
-        count +=1 
+for i in range(start, end+1) :
+    root= int(math.sqrt(i))
+    if (root * root == i and is_prime(root)) :
+        count +=1
 print(count)
