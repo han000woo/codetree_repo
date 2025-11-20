@@ -71,15 +71,16 @@ for c in range(len(command)) :
             cur_node = cur_node.next 
     
     if(cur_node.prev == None) :
-        print("(Null)")
+        print("(Null)",end=' ')
     else :
         print(cur_node.prev.data,end=' ')
     
     print(cur_node.data,end=' ')
     
     if(cur_node.next == None) :
-        print("(Null)")
+        print("(Null)",end=' ')
     else :
-        print(cur_node.next.data)
+        print(cur_node.next.data,end=' ')
+    print()
     
 
