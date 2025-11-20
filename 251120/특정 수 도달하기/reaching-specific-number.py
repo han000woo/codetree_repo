@@ -6,4 +6,4 @@ for i in arr :
         break 
     sum += i 
     count += 1
-print(sum, sum/count)
+print(f'{sum} {sum/count:.1f}')
