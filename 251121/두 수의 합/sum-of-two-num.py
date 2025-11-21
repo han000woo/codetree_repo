@@ -1,35 +1,26 @@
 n, k = map(int, input().split())
 arr = list(map(int, input().split()))
 
+count = 0
 visited = {}
 
+# 등장 횟수 기록
 for x in arr:
     visited[x] = visited.get(x, 0) + 1
 
-count = 0
+answer = 0
 
-for key in list(visited.keys()):
+for key in visited:
     alter = k - key
 
-    # 이미 사용됨
-    if visited.get(key, 0) == 0:
-        continue
-    
-    # 상대값이 없음
+    # 존재하지 않으면 패스
     if alter not in visited:
         continue
 
-    # key == alter_key (같은 수 두 개로 쌍 만들기)
-    if key == alter:
-        count += visited[key] // 2
-        visited[key] = 0
-        continue
+    if key == alter:   # 같은 수로 조합 만드는 경우
+        cnt = visited[key]
+        answer += cnt * (cnt - 1) // 2
+    elif key < alter:  # 중복 방지 위해 key < alter
+        answer += visited[key] * visited[alter]
 
-    # key < alter 일 때만 처리 (중복 방지)
-    if key < alter:
-        pairs = min(visited[key], visited[alter])
-        count += pairs
-        visited[key] -= pairs
-        visited[alter] -= pairs
-
-print(count)
+print(answer)
