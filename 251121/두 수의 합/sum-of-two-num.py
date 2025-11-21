@@ -13,7 +13,7 @@ for key in visited_dict.keys() :
     alter_key = k - key 
     if(alter_key == key) : 
         continue
-    if(alter_key in visited_dict) :
+    if(alter_key in visited_dict.keys()) :
         visited_dict[alter_key] = True 
         count +=1 
 
