@@ -4,18 +4,22 @@ arr = list(map(int, input().split()))
 # Please write your code here.
 visited_dict = {} 
 for i in arr :
-    visited_dict[i] = False 
+    if i in visited_dict :
+        visited_dict[i] +=1 
+    else : 
+        visited_dict[i] = 1
 
 count = 0
 for key in visited_dict.keys() :
-    if(visited_dict[key]) :
-        continue 
-    alter_key = k - key 
-    if(alter_key == key) : 
+    if(visited_dict[key] == 0) :
         continue
-    if(alter_key in visited_dict.keys()) :
-        visited_dict[alter_key] = True 
-        visited_dict[key] = True
-        count +=1 
+    alter_key = k - key 
+    if(visited_dict[alter_key] == 0) :
+        continue 
+    visited_dict[key] -= 1
+    visited_dict[alter_key] -=1
+    count +=1
+
+        
 
 print(count)
