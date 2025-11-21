@@ -15,6 +15,7 @@ for key in visited_dict.keys() :
         continue
     if(alter_key in visited_dict.keys()) :
         visited_dict[alter_key] = True 
+        visited_dict[key] = True
         count +=1 
 
 print(count)
