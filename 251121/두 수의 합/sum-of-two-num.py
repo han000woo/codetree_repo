@@ -14,6 +14,8 @@ for key in visited_dict.keys() :
     if(visited_dict[key] == 0) :
         continue
     alter_key = k - key 
+    if(alter_key not in visited_dict) :
+        continue
     if(visited_dict[alter_key] == 0) :
         continue 
     visited_dict[key] -= 1
