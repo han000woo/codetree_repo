@@ -1,5 +1,5 @@
 n = int(input())
-if(a == 100) :
+if(n == 100) :
     print("pass")
 else :
     print("failure")
