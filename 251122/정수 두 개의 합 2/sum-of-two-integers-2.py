@@ -10,12 +10,14 @@ right = len(arr)-1
 count = 0 
 
 while(left <right) :
+    # print(left,right)
     sum_v = arr[left] + arr[right]
     if(sum_v < k) :
         left +=1 
+        right +=1
         count +=1 
     elif(sum_v == k) :
-        left +=1 
+        right -=1 
         count +=1 
     elif(sum_v > k ) :
         right -=1 
