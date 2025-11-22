@@ -17,7 +17,7 @@ def func(n) :
         df[cnt] = df[cnt-1] + df[cnt-2]
         cnt +=1 
     
-    print(df[cnt-1])
+    print(df[cnt-1] % 10007)
 
 func(n)
 
